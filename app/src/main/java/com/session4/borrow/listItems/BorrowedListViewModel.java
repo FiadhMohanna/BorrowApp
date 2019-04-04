@@ -19,9 +19,9 @@ public class BorrowedListViewModel extends AndroidViewModel {
 
     public BorrowedListViewModel(Application application) {
         super(application);
-      //  TODO: get an instance of our database using
+      //TODO 8: get an instance of our database using getDatabase in AppDatabase
 
-      // TODO:  load the list of borrowed items from the database Hint : Use should use the query we defined in the DAO class via getAllBorrowedItems().
+      //TODO 9: load the list of borrowed items from the database. Hint: Use the query we defined in the DAO class via getAllBorrowedItems().
 
     }
 

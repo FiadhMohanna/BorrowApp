@@ -10,16 +10,17 @@ import android.arch.persistence.room.TypeConverters;
 import java.util.List;
 
 import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
-// TODO 3:  Use @Dao to tell Room that this is a DAO class.
-
+// -- TODO 3:  Use @Dao to tell Room that this is a DAO class.
+@Dao
 @TypeConverters(DateConverter.class)
 public interface BorrowModelDao {
-    // TODO 4: TODO : Write an SQL query to find all borrowed items
+    // -- TODO 4: TODO : Write an SQL query to find all borrowed items
+    @Query("SELECT * FROM BorrowModel")
+    LiveData<List<BorrowModel>> getAllBorrowedItems();
 
-
-    // TODO 5: Write addBorrow Function
-
-
+    // -- TODO 5: Write addBorrow Function
+    @Insert (onConflict = REPLACE)
+    void addBorrow(BorrowModel borrowModel);
 
     @Delete
     void deleteBorrow(BorrowModel borrowModel);

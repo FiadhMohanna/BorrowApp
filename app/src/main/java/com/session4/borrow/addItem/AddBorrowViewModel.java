@@ -20,7 +20,8 @@ public class AddBorrowViewModel extends AndroidViewModel {
     }
 
     public void addBorrow(final BorrowModel borrowModel) {
-        // TODO 6: Call addAsyncTask to execute it
+        // -- TODO 6: Call addAsyncTask to execute it
+        new addAsyncTask(appDatabase).execute(borrowModel);
     }
 
     private static class addAsyncTask extends AsyncTask<BorrowModel, Void, Void> {

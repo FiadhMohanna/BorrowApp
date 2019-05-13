@@ -46,8 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         recyclerView.setAdapter(recyclerViewAdapter);
 
         viewModel = ViewModelProviders.of(this).get(BorrowedListViewModel.class);
-        // TODO 8: make our Activity observe the changes in the ViewModel
-
+        // -- TODO 8: make our Activity observe the changes in the ViewModel
+        viewModel.getItemAndPersonList().observe(MainActivity.this, new Observer<List<BorrowModel>>() {
+            @Override
+            public void onChanged(@Nullable List<BorrowModel> itemAndPeople) {
+                recyclerViewAdapter.addItems(itemAndPeople);
+            }
+        });
 
     }
 

@@ -1,16 +1,20 @@
 package com.session4.borrow.db;
 
+//import android.arch.persistence.room.Entity;
+//import android.arch.persistence.room.PrimaryKey;
+//import android.arch.persistence.room.TypeConverters;
+
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
 
 import java.util.Date;
-// TODO 1: use the @Entity annotation to tell Room to use the current class as a database table.
-
+// -- TODO 1: use the @Entity annotation to tell Room to use the current class as a database table.
+@Entity
 public class BorrowModel {
-// TODO 2 : use the @PrimaryKey annotation to  make PrimaryKey autoGenerate on database table.
+// -- TODO 2 : use the @PrimaryKey annotation to  make PrimaryKey autoGenerate on database table.
 
-
+    @PrimaryKey (autoGenerate = true)
     public int id;
     private String itemName;
     private String personName;

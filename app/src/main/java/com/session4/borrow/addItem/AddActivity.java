@@ -50,8 +50,12 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
                 if (itemEditText.getText() == null || nameEditText.getText() == null || date == null)
                     Toast.makeText(AddActivity.this, "Missing fields", Toast.LENGTH_SHORT).show();
                 else {
-                    // TODO 7: Use addBorrow (from addBorrowViewModel) to send Data and add it
-
+                    // -- TODO 7: Use addBorrow (from addBorrowViewModel) to send Data and add it
+                    addBorrowViewModel.addBorrow(new BorrowModel(
+                            itemEditText.getText().toString(),
+                            nameEditText.getText().toString(),
+                            date
+                    ));
                     finish();
                 }
             }
